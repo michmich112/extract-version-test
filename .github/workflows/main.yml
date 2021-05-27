@@ -11,6 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get version
+        id: version-step
         uses: michmich112/extract-version@main
         with:
           version-file: VERSION
@@ -19,4 +20,4 @@ jobs:
         run: |
           echo "version -> $VERSION"
         env:
-          VERSION: ${{ steps.extract-version.outputs.version }}
+          VERSION: ${{ steps.version-step.outputs.version }}
