@@ -1,0 +1,19 @@
+name: Get version test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get version
+        uses: michmich112/extract-version@main
+      - name: test
+        run: |
+          echo "version -> $VERSION"
+        env:
+          VERSION: ${{ steps.extract-version.outputs.version }}
