@@ -15,7 +15,7 @@ jobs:
         uses: michmich112/extract-version@main
         with:
           version-file: VERSION
-          schema: major.minor.build
+          scheme: major.minor.build
       - name: test
         run: |
           echo "version -> $VERSION"
