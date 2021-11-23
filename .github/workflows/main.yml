@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get version
         id: version-step
-        uses: michmich112/extract-version@main
+        uses: michmich112/extract-version@up/update-gh-action-stats
         with:
           version-file: VERSION
           schema: major.minor.build
